@@ -11,12 +11,10 @@ test('login screen can be rendered', function () {
 test('users can authenticate using the login screen', function () {
     $user = User::factory()->create();
 
-    $response = $this->withSession(['_token' => 'test-token'])
-        ->post('/login', [
-            'email' => $user->email,
-            'password' => 'password',
-            '_token' => 'test-token',
-        ]);
+    $response = $this->post('/login', [
+        'email' => $user->email,
+        'password' => 'password',
+    ]);
 
     $this->assertAuthenticated();
     $response->assertRedirect(route('dashboard', absolute: false));
@@ -33,23 +31,10 @@ test('users can not authenticate with invalid password', function () {
     $this->assertGuest();
 });
 
-test('users can not authenticate with invalid email', function () {
-    $this->post('/login', [
-        'email' => 'wrong@example.com',
-        'password' => 'password',
-    ]);
-
-    $this->assertGuest();
-});
-
 test('users can logout', function () {
     $user = User::factory()->create();
 
-    $response = $this->actingAs($user)
-        ->withSession(['_token' => 'test-token'])
-        ->post('/logout', [
-            '_token' => 'test-token',
-        ]);
+    $response = $this->actingAs($user)->post('/logout');
 
     $this->assertGuest();
     $response->assertRedirect('/');

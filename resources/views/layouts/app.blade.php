@@ -1,60 +1,36 @@
 <!DOCTYPE html>
-<html class="h-full bg-[#F5F2F2]" lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="description" content="DEMGarage - Professional vehicle service management system">
-  <meta name="keywords" content="vehicle service, motorcycle repair, workshop management, booking system">
-  <meta name="author" content="DEMGarage">
-  <meta name="theme-color" content="#000000">
-  <title>{{ config('app.name', 'DEMGarage') }} - @yield('title', 'Vehicle Service Management')</title>
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
-  <!-- Preload critical assets -->
-  <link rel="preload" href="{{ asset('asset/logo-demgarage.png') }}" as="image">
-  <link rel="icon" type="image/x-icon" href="{{ asset('asset/favicon.ico') }}">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
+    <body class="font-sans antialiased">
+        <div class="min-h-screen bg-gray-100">
+            @include('layouts.navigation')
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+            <!-- Page Heading -->
+            @isset($header)
+                <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endisset
 
-  <!-- CSRF Token -->
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-
-  @stack('styles')
-</head>
-
-<body class="min-h-screen flex flex-col antialiased">
-  @include('partials.header')
-
-  @yield('content')
-
-  @include('partials.footer')
-
-  @stack('scripts')
-
-  <!-- Mobile menu toggle script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-
-      if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function() {
-          mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-          if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
-            mobileMenu.classList.add('hidden');
-          }
-        });
-      }
-    });
-  </script>
-</body>
-
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
+        </div>
+    </body>
 </html>
