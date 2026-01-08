@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff581a1022933455e57994bcf47115f7",
+    "content-hash": "0abd799ecffd6c698d77ea2e3edba86d",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -9496,12 +9496,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozarts/assert.git",
-                "reference": "b01be90dceff69c88c7b36c30ee45c9fd9107f7f"
+                "reference": "bdbabc199a7ba9965484e4725d66170e5711323b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozarts/assert/zipball/b01be90dceff69c88c7b36c30ee45c9fd9107f7f",
-                "reference": "b01be90dceff69c88c7b36c30ee45c9fd9107f7f",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/bdbabc199a7ba9965484e4725d66170e5711323b",
+                "reference": "bdbabc199a7ba9965484e4725d66170e5711323b",
                 "shasum": ""
             },
             "require": {
@@ -9550,7 +9550,7 @@
                 "issues": "https://github.com/webmozarts/assert/issues",
                 "source": "https://github.com/webmozarts/assert/tree/2.1.1"
             },
-            "time": "2026-01-07T17:26:38+00:00"
+            "time": "2026-01-08T11:28:40+00:00"
         }
     ],
     "aliases": [],
@@ -9559,7 +9559,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.2"
+        "php": "^8.3"
     },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
