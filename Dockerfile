@@ -1,6 +1,6 @@
 FROM php:8.3-apache
 
-# Install system dependencies
+# System dependencies
 RUN apt-get update && apt-get install -y \
     git unzip zip curl \
     libpng-dev libonig-dev libxml2-dev libzip-dev \
@@ -11,35 +11,27 @@ RUN apt-get update && apt-get install -y \
 # Enable Apache rewrite
 RUN a2enmod rewrite
 
-# Change Apache to listen on Railway PORT
+# Apache listen on Railway PORT
 RUN sed -i 's/80/${PORT}/g' /etc/apache2/ports.conf \
  && sed -i 's/:80/:${PORT}/g' /etc/apache2/sites-available/000-default.conf
 
 WORKDIR /var/www/html
 
-# Copy project files
+# Copy app
 COPY . .
 
-# Install Composer
+# Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
-
-# Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Clear Laravel cache (WAJIB)
-RUN php artisan config:clear \
- && php artisan cache:clear \
- && php artisan route:clear \
- && php artisan view:clear
-
-# Build frontend
+# Frontend build
 RUN npm ci && npm run build
 
-# Set permissions (PENTING)
+# Permissions
 RUN chown -R www-data:www-data storage bootstrap/cache \
  && chmod -R 775 storage bootstrap/cache
 
-# Point Apache to Laravel public folder
+# Point Apache to public
 RUN sed -i 's!/var/www/html!/var/www/html/public!g' \
     /etc/apache2/sites-available/000-default.conf
 
