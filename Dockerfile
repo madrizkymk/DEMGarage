@@ -19,4 +19,4 @@ RUN npm run build
 
 RUN chmod -R 775 storage bootstrap/cache
 
-CMD php -S 0.0.0.0:${PORT} -t public
+CMD php artisan db:seed --force && php -S 0.0.0.0:${PORT} -t public
