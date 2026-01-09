@@ -27,10 +27,30 @@ class UserSeeder extends Seeder
 
         // User biasa
         User::updateOrCreate(
-            ['email' => 'user@gmail.com'],
+            ['email' => 'mamad@gmail.com'],
             [
-                'name' => 'User',
-                'phone_number' => '',
+                'name' => 'Mamad',
+                'phone_number' => '081234567891',
+                'password' => Hash::make('password'), // ganti di production
+                'role' => 'user',
+                'email_verified_at' => now(),
+            ]
+        );
+        User::updateOrCreate(
+            ['email' => 'dwi@gmail.com'],
+            [
+                'name' => 'Dwi',
+                'phone_number' => '081234567892',
+                'password' => Hash::make('password'), // ganti di production
+                'role' => 'user',
+                'email_verified_at' => now(),
+            ]
+        );
+        User::updateOrCreate(
+            ['email' => 'eka@gmail.com'],
+            [
+                'name' => 'Eka',
+                'phone_number' => '081234567893',
                 'password' => Hash::make('password'), // ganti di production
                 'role' => 'user',
                 'email_verified_at' => now(),
