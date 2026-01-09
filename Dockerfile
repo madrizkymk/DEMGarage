@@ -10,9 +10,8 @@ RUN apt-get update && apt-get install -y \
 # Enable rewrite
 RUN a2enmod rewrite
 
-# FIX: only one MPM (prefork)
-RUN a2dismod mpm_event mpm_worker || true \
- && a2enmod mpm_prefork
+# FIX MPM: disable conflicting MPMs ONLY
+RUN a2dismod mpm_event mpm_worker
 
 # Apache listen on Railway PORT
 RUN sed -i 's/80/${PORT}/g' /etc/apache2/ports.conf \
