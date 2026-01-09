@@ -116,7 +116,7 @@
               <label for="phone" class="sr-only">Phone Number</label>
               <input type="tel" id="phone" name="phone" placeholder="Phone Number (e.g. 08123456789)"
                 class="w-full px-4 py-3 bg-white rounded-md border-0 focus:ring-2 focus:ring-blue-500 transition-colors"
-                value="{{ old('phone') }}" required>
+                value="{{ old('phone_number') }}" required>
               @error('phone')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
               @enderror
