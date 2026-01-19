@@ -21,7 +21,7 @@
           <label for="vehicle_number" class="block sm:text-md text-sm font-medium text-gray-700 mb-2">Vehicle
             Number</label>
           <input type="text" id="vehicle_number" name="vehicle_number"
-            class="mt-1 block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm transition-colors uppercase"
+            class="mt-1 block w-full px-2 py-3 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm text-xs transition-colors uppercase"
             placeholder="Enter vehicle number (e.g. B 1234 AB)" value="{{ old('vehicle_number') }}"
             oninput="formatVehicleNumber(this)" required>
           @error('vehicle_number')
@@ -31,7 +31,7 @@
         <div>
           <label for="service_type" class="block sm:text-md text-sm font-medium text-gray-700 mb-2">Service Type</label>
           <select name="service_type" id="service_type"
-            class="cursor-pointer mt-1 block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm font-medium text-gray-700 transition-colors"
+            class="cursor-pointer mt-1 block w-full px-2 py-3 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm text-xs font-medium text-gray-700 transition-colors"
             required>
             <option value="" disabled {{ old('service_type') ? '' : 'selected' }}>Select service type</option>
             <option value="minor service" {{ old('service_type') == 'minor service' ? 'selected' : '' }}>Minor Service
@@ -48,7 +48,7 @@
         <div>
           <label for="booking_date" class="block text-sm sm:text-md font-medium text-gray-700 mb-2">Booking Date</label>
           <input type="date" id="booking_date" name="booking_date"
-            class="cursor-pointer mt-1 block w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm transition-colors"
+            class="cursor-pointer mt-1 block w-32 px-2 py-3 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm text-xs transition-colors"
             value="{{ old('booking_date') }}" min="{{ date('Y-m-d') }}" required>
           @error('booking_date')
             <p class="text-red-500 text-sm mt-1">{{ $message }}</p>

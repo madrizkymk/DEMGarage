@@ -22,7 +22,7 @@
         </button>
         @if (request('search'))
           <a href="{{ route('admin.users.index') }}"
-            class="flex-shrink-0 p-2 bg-red-300 hover:bg-red-500 rounded-md transition duration-200">
+            class="flex-shrink-0 p-2 flex items-center bg-red-300 hover:bg-red-500 rounded-md transition duration-200">
             <img src="{{ asset('asset/cross.png') }}" alt="Clear" class="h-5 w-5" />
           </a>
         @endif

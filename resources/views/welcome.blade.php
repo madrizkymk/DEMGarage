@@ -5,13 +5,8 @@
 
     <div class="flex flex-col md:flex-row items-center justify-center max-w-4xl space-y-6 md:space-y-0 md:space-x-8">
       <!-- Gambar DEMGarage -->
-      <div
-        class="min-w-64 h-64 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center border border-blue-300 rounded-lg shadow-lg">
-        <div class="text-center">
-          <div class="text-6xl mb-2">🔧</div>
-          <div class="text-blue-600 font-semibold">DEMGarage</div>
-          <div class="text-sm text-blue-500">Workshop Management</div>
-        </div>
+      <div class="min-w-64 h-64 flex shadow-lg">
+        <img src="{{ asset('asset/bengkel.png') }}" alt="DEMGarage Image" class="rounded-lg w-full h-full object-cover" />
       </div>
 
       <!-- Deskripsi -->
@@ -24,10 +19,14 @@
           dan melihat estimasi biaya dengan mudah. Semua proses dilakukan secara efisien dan terintegrasi untuk
           menciptakan pelayanan yang cepat, akurat, dan profesional.
         </p>
-        <p>
+        <p class="mb-4">
           Dibangun dengan semangat inovasi dan modernisasi industri otomotif, <strong>DEMGarage</strong> hadir untuk
           memberikan pengalaman terbaik bagi pelanggan
           dan mendukung bengkel menuju transformasi digital.
+        </p>
+        <p>
+          Booking Sekarang <a href="{{ route('user.bookings.index') }}" class="text-blue-600 hover:underline">Klik
+            Disini</a>!
         </p>
       </div>
     </div>

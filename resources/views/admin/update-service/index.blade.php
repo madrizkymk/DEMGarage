@@ -16,12 +16,13 @@
         <input type="text" name="search" value="{{ request('search') }}"
           placeholder="Search by name, vehicle, or service type..."
           class="flex-1 min-w-0 px-3 py-3 sm:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 text-sm">
-        <button type="submit" class="flex-shrink-0 p-2 bg-gray-100 hover:bg-gray-200 rounded-md transition duration-200">
+        <button type="submit"
+          class="flex-shrink-0 p-2 bg-green-100 hover:bg-green-200 rounded-md transition duration-200">
           <img src="{{ asset('asset/search.png') }}" alt="Search" class="h-5 w-5" />
         </button>
         @if (request('search'))
           <a href="{{ route('admin.update-service.index') }}"
-            class="flex-shrink-0 p-2 bg-gray-100 hover:bg-gray-200 rounded-md transition duration-200">
+            class="flex-shrink-0 p-2 flex items-center bg-red-300 hover:bg-red-500 rounded-md transition duration-200">
             <img src="{{ asset('asset/cross.png') }}" alt="Clear" class="h-5 w-5" />
           </a>
         @endif
@@ -110,11 +111,11 @@
         @endif
       @else
         <div class="text-center py-12">
-          <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div class="flex items-center justify-center mx-auto mb-4">
             <img src="{{ asset('asset/update.png') }}" alt="No services" class="w-12 h-12 opacity-50">
           </div>
-          <h3 class="text-lg font-medium text-gray-900 mb-2">No Completed Services</h3>
-          <p class="text-gray-500">There are no completed services to update at the moment.</p>
+          <h3 class="sm:text-lg text-sm font-medium text-gray-900 mb-2">No Completed Services</h3>
+          <p class="text-gray-500 sm:text-base text-xs">There are no completed services to update at the moment.</p>
         </div>
       @endif
     </div>

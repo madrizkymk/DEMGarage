@@ -24,11 +24,19 @@
               @enderror
             </div>
 
-            <div class="mb-4">
+            <div class="mb-4 relative">
               <label for="password" class="sr-only">Password</label>
               <input type="password" id="password" name="password" placeholder="Password"
-                class="w-full px-4 py-3 bg-gray-200 rounded-md border-0 focus:ring-2 focus:ring-blue-500 focus:bg-white transition-colors"
+                class="w-full px-4 py-3 pr-12 bg-gray-200 rounded-md border-0 focus:ring-2 focus:ring-blue-500 focus:bg-white transition-colors"
                 required>
+              <button type="button" onclick="togglePassword('password')"
+                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700">
+                <svg width="20px" height="20px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8 2c-1.5 0-2.8.4-3.9 1.2l.8.7C5.8 3.3 6.8 3 8 3c3.3 0 6 2.7 6 6h1c0-3.9-3.1-7-7-7zM1 3l1.6 1.5C1.6 5.7 1 7.3 1 9h1c0-1.5.5-2.8 1.4-3.8l2.2 2C5.2 7.7 5 8.3 5 9c0 1.7 1.3 3 3 3 .8 0 1.5-.3 2-.8l3 2.8.7-.7-12-11L1 3zm5.3 4.9l2.9 2.7c-.3.2-.7.4-1.2.4-1.1 0-2-.9-2-2 0-.4.1-.8.3-1.1zM11 9.5l-1-.9c-.2-.8-.9-1.5-1.8-1.6l-1-.9c.3-.1.5-.1.8-.1 1.7 0 3 1.3 3 3v.5z" />
+                </svg>
+              </button>
               @error('password')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
               @enderror
@@ -86,7 +94,7 @@
           </button>
         </div>
         <div class="md:w-1/2 w-full flex sm:px-10 px-4  flex-col justify-center items-center">
-          <h2 class="text-3xl font-bold mb-6">Register</h2>
+          <h2 class="text-3xl font-bold my-6">Register</h2>
 
           <form method="POST" action="{{ route('register') }}" class="w-full max-w-sm">
             @csrf
@@ -122,22 +130,38 @@
               @enderror
             </div>
 
-            <div class="mb-4">
+            <div class="mb-4 relative">
               <label for="reg-password" class="sr-only">Password</label>
               <input type="password" id="reg-password" name="password" placeholder="Password"
-                class="w-full px-4 py-3 bg-white rounded-md border-0 focus:ring-2 focus:ring-blue-500 transition-colors"
+                class="w-full px-4 py-3 pr-12 bg-white rounded-md border-0 focus:ring-2 focus:ring-blue-500 transition-colors"
                 required>
+              <button type="button" onclick="togglePassword('reg-password')"
+                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700">
+                <svg width="20px" height="20px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8 2c-1.5 0-2.8.4-3.9 1.2l.8.7C5.8 3.3 6.8 3 8 3c3.3 0 6 2.7 6 6h1c0-3.9-3.1-7-7-7zM1 3l1.6 1.5C1.6 5.7 1 7.3 1 9h1c0-1.5.5-2.8 1.4-3.8l2.2 2C5.2 7.7 5 8.3 5 9c0 1.7 1.3 3 3 3 .8 0 1.5-.3 2-.8l3 2.8.7-.7-12-11L1 3zm5.3 4.9l2.9 2.7c-.3.2-.7.4-1.2.4-1.1 0-2-.9-2-2 0-.4.1-.8.3-1.1zM11 9.5l-1-.9c-.2-.8-.9-1.5-1.8-1.6l-1-.9c.3-.1.5-.1.8-.1 1.7 0 3 1.3 3 3v.5z" />
+                </svg>
+              </button>
               @error('password')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
               @enderror
             </div>
 
-            <div class="mb-6">
+            <div class="mb-6 relative">
               <label for="password_confirmation" class="sr-only">Confirm Password</label>
               <input type="password" id="password_confirmation" name="password_confirmation"
                 placeholder="Confirm Password"
-                class="w-full px-4 py-3 bg-white rounded-md border-0 focus:ring-2 focus:ring-blue-500 transition-colors"
+                class="w-full px-4 py-3 pr-12 bg-white rounded-md border-0 focus:ring-2 focus:ring-blue-500 transition-colors"
                 required>
+              <button type="button" onclick="togglePassword('password_confirmation')"
+                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700">
+                <svg width="20px" height="20px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8 2c-1.5 0-2.8.4-3.9 1.2l.8.7C5.8 3.3 6.8 3 8 3c3.3 0 6 2.7 6 6h1c0-3.9-3.1-7-7-7zM1 3l1.6 1.5C1.6 5.7 1 7.3 1 9h1c0-1.5.5-2.8 1.4-3.8l2.2 2C5.2 7.7 5 8.3 5 9c0 1.7 1.3 3 3 3 .8 0 1.5-.3 2-.8l3 2.8.7-.7-12-11L1 3zm5.3 4.9l2.9 2.7c-.3.2-.7.4-1.2.4-1.1 0-2-.9-2-2 0-.4.1-.8.3-1.1zM11 9.5l-1-.9c-.2-.8-.9-1.5-1.8-1.6l-1-.9c.3-.1.5-.1.8-.1 1.7 0 3 1.3 3 3v.5z" />
+                </svg>
+              </button>
               @error('password_confirmation')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
               @enderror
@@ -205,6 +229,20 @@
     function goForgot() {
       slider.style.transform = 'translateX(-66.66%)';
       localStorage.setItem('authSlide', 'forgot');
+    }
+
+    function togglePassword(inputId) {
+      const input = document.getElementById(inputId);
+      const button = input.nextElementSibling;
+      if (input.type === 'password') {
+        input.type = 'text';
+        button.innerHTML =
+          '<svg width="20px" height="20px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 10c0-3.9 3.1-7 7-7s7 3.1 7 7h-1c0-3.3-2.7-6-6-6s-6 2.7-6 6H1zm4 0c0-1.7 1.3-3 3-3s3 1.3 3 3-1.3 3-3 3-3-1.3-3-3zm1 0c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2z"/></svg>';
+      } else {
+        input.type = 'password';
+        button.innerHTML =
+          '<svg width="20px" height="20px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 2c-1.5 0-2.8.4-3.9 1.2l.8.7C5.8 3.3 6.8 3 8 3c3.3 0 6 2.7 6 6h1c0-3.9-3.1-7-7-7zM1 3l1.6 1.5C1.6 5.7 1 7.3 1 9h1c0-1.5.5-2.8 1.4-3.8l2.2 2C5.2 7.7 5 8.3 5 9c0 1.7 1.3 3 3 3 .8 0 1.5-.3 2-.8l3 2.8.7-.7-12-11L1 3zm5.3 4.9l2.9 2.7c-.3.2-.7.4-1.2.4-1.1 0-2-.9-2-2 0-.4.1-.8.3-1.1zM11 9.5l-1-.9c-.2-.8-.9-1.5-1.8-1.6l-1-.9c.3-.1.5-.1.8-.1 1.7 0 3 1.3 3 3v.5z"/></svg>';
+      }
     }
 
     // Set initial position: prioritize errors, then localStorage
