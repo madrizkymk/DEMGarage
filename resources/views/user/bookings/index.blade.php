@@ -15,7 +15,7 @@
         </a>
         <h2 class="text-xl sm:text-3xl font-semibold">Booking</h2>
       </div>
-      <form class="space-y-6" method="POST" action="{{ route('user.bookings.store') }}">
+      <form id="booking-form" class="space-y-6" method="POST" action="{{ route('user.bookings.store') }}">
         @csrf
         <div>
           <label for="vehicle_number" class="block sm:text-md text-sm font-medium text-gray-700 mb-2">Vehicle
@@ -124,7 +124,7 @@
   <script>
     // Form validation and loading state
     document.addEventListener('DOMContentLoaded', function() {
-      const form = document.querySelector('form');
+      const form = document.getElementById('booking-form');
       const submitBtn = document.querySelector('button[type="submit"]');
       const submitText = document.getElementById('submit-text');
       const loadingSpinner = document.getElementById('loading-spinner');

@@ -11,8 +11,7 @@ class BookingController extends Controller
 {
     public function index()
     {
-        $bookings = Booking::with('user')->get();
-        return view('user.bookings.index', compact('bookings'));
+        return view('user.bookings.index');
     }
 
     public function show(Booking $booking)
